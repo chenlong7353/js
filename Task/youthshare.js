@@ -4,7 +4,8 @@ let md5 = require('md5-node');
 let nowTime;
 let wxck;
 let articles = ["https://focus.youth.cn/article/s?signature=dQOvnJNrgR0GzE9azVde8BiQb6wpHreMjAZaV6yqY2lXojxeM8&uid=51447974&phone_code=f36d432f1ad45dfc5ac97d5e2af060e5&scid=36506995&time=1614527455&app_version=2.0.2&sign=17f2f9faa78918ca2210c4451f2d29b3",
-"https://focus.youth.cn/article/s?signature=VOZvBzYN5rkDxgX7Ywgeqli8BznQtVdY9b21L3yAP6WMnmlGK9&uid=51781849&phone_code=3c794d7b4be1a3aff82c5769407cddd4&scid=36514412&time=1614527542&app_version=2.0.2&sign=57a1f8f9c783e6d0180139f9d3ba6c48"]
+"https://focus.youth.cn/article/s?signature=VOZvBzYN5rkDxgX7Ywgeqli8BznQtVdY9b21L3yAP6WMnmlGK9&uid=51781849&phone_code=3c794d7b4be1a3aff82c5769407cddd4&scid=36514412&time=1614527542&app_version=2.0.2&sign=57a1f8f9c783e6d0180139f9d3ba6c48",
+"https://focus.youth.cn/article/s?signature=QB5EzPY3exK9wOd7E9gYLAsV8xbGIgGGg0V78oADjvkbgZRGLV&uid=51447974&phone_code=f36d432f1ad45dfc5ac97d5e2af060e5&scid=36522822&time=1614596118&app_version=2.0.2&sign=c2d0ad00c34b85c35ff6a29cd9d19c70"]
 
 let encodearticles;
 
