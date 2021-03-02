@@ -5,7 +5,21 @@ let nowTime;
 let wxck;
 let articles = ["https://focus.youth.cn/article/s?signature=dQOvnJNrgR0GzE9azVde8BiQb6wpHreMjAZaV6yqY2lXojxeM8&uid=51447974&phone_code=f36d432f1ad45dfc5ac97d5e2af060e5&scid=36506995&time=1614527455&app_version=2.0.2&sign=17f2f9faa78918ca2210c4451f2d29b3",
 "https://focus.youth.cn/article/s?signature=VOZvBzYN5rkDxgX7Ywgeqli8BznQtVdY9b21L3yAP6WMnmlGK9&uid=51781849&phone_code=3c794d7b4be1a3aff82c5769407cddd4&scid=36514412&time=1614527542&app_version=2.0.2&sign=57a1f8f9c783e6d0180139f9d3ba6c48",
-"https://focus.youth.cn/article/s?signature=QB5EzPY3exK9wOd7E9gYLAsV8xbGIgGGg0V78oADjvkbgZRGLV&uid=51447974&phone_code=f36d432f1ad45dfc5ac97d5e2af060e5&scid=36522822&time=1614596118&app_version=2.0.2&sign=c2d0ad00c34b85c35ff6a29cd9d19c70"]
+"https://focus.youth.cn/article/s?signature=QB5EzPY3exK9wOd7E9gYLAsV8xbGIgGGg0V78oADjvkbgZRGLV&uid=51447974&phone_code=f36d432f1ad45dfc5ac97d5e2af060e5&scid=36522822&time=1614596118&app_version=2.0.2&sign=c2d0ad00c34b85c35ff6a29cd9d19c70",
+"https://focus.youth.cn/article/s?signature=X6AKVevx2zmNQOjaBjgvLZCVP2oMI6yyz20ad93krDoJqw0WYn&uid=51781849&phone_code=3c794d7b4be1a3aff82c5769407cddd4&scid=36518867&time=1614661081&app_version=2.0.2&sign=98fe38a0a6b9ab0f5877d6331b7f2e9b",
+"https://focus.youth.cn/article/s?signature=mq63rgk0doNXbYK7LMbkVyIzdALrC8zzlmmaEMLO9lwG2zQJeB&uid=51781849&phone_code=3c794d7b4be1a3aff82c5769407cddd4&scid=36551188&time=1614661103&app_version=2.0.2&sign=535a4ea4a7d07a770d2f4ff88b3e2f23",
+"https://focus.youth.cn/article/s?signature=KYJBMEDexQprwO0aJJgZNBIgMqy8FljjvG0aj5zbg8RLkP9oXd&uid=51781849&phone_code=3c794d7b4be1a3aff82c5769407cddd4&scid=36494226&time=1614661116&app_version=2.0.2&sign=1e838cabf07b20d4f128e83f350dc876",
+"https://focus.youth.cn/article/s?signature=RpqGjEWYvLyBl2g1lqo0yNsvLwm3ivddXb94D56Pd3OMonkQx9&uid=51447974&phone_code=f36d432f1ad45dfc5ac97d5e2af060e5&scid=36551291&time=1614661034&app_version=2.0.2&sign=a4cc8c1b21e89af6cbe49bf60007e499",
+"https://focus.youth.cn/article/s?signature=LrNmbVzoOlxeyXw4p9jNy3HqmoA0Iz33rmK7M8ZkP3BAW9pJqD&uid=51447974&phone_code=f36d432f1ad45dfc5ac97d5e2af060e5&scid=36551347&time=1614661046&app_version=2.0.2&sign=f0c96c2b025c34623d2efa649c8f6e9c"]
+
+
+
+
+
+
+
+
+
 
 let encodearticles;
 
