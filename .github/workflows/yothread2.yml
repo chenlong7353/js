@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/xiaokxiansheng/js.git ~/js
+          git clone https://github.com/chenlong7353/js.git ~/js
       - name: Use Node.js 14.15.4
         uses: actions/setup-node@v1
         with:
