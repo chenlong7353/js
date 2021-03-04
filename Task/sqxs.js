@@ -167,13 +167,13 @@ function readbook() {
                     if (result.status == 200) {
                         ReadTimes++;
                         $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
-                        await $.wait(5000);
+                        await $.wait(2000);
                         await readbook();
                     } else {
 
                         if (result.message != '领取达到每日上限，请明天再来') {
                             $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
-                            await $.wait(5000);
+                            await $.wait(2000);
                             await readbook();
                         } else
                             $.log("【阅读任务】阅读失败，" + result.message);
@@ -235,12 +235,12 @@ function vediogoldprize(j) {
                         j++;
                         $.log("【视频金币】观看第" + j + "个视频成功，获得250金币，等待30s观看下一个视频");
                         vediogold += 250;
-                        await $.wait(30000);
+                        await $.wait(20000);
                         await vediogoldprize(j);
                     } else {
                         if (result.message != '领取达到每日上限，请明天再来') {
                             $.log("【视频金币】观看失败，" + result.message + ",再次尝试失败");
-                            await $.wait(30000);
+                            await $.wait(20000);
                             await vediogoldprize(j);
                         } else
                             $.log("【视频金币】观看失败," + result.message);
@@ -272,12 +272,12 @@ function vediodrawprize(k) {
                     if (result.status == 200) {
                         k++;
                         $.log("【视频抽奖】观看第" + k + "个视频成功，获得一次抽奖机会");
-                        await $.wait(5000);
+                        await $.wait(2000);
                         await draw(k);
                     } else {
                         if (result.message != '领取达到每日上限，请明天再来') {
                             $.log("【视频抽奖】观看失败，" + result.message + ",再次尝试失败");
-                            await $.wait(5000);
+                            await $.wait(2000);
                             await vediodrawprize(k);
                         } else
                             $.log("【视频抽奖】观看失败," + result.message);
@@ -307,7 +307,7 @@ function draw(k) {
                     if (result.status == 200) {
                         $.log("【抽奖任务】抽奖成功，获得" + result.data.prizeList[0].prizeName);
                         drawgold += parseInt(result.data.prizeList[0].prizeName);
-                        await $.wait(5000);
+                        await $.wait(2000);
                         await vediodrawprize(k);
                     } else {
                         $.log("【抽奖任务】抽奖失败," + result.message);
