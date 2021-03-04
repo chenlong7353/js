@@ -16,6 +16,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.
 3.2 修复手机不能跑的低级错误,调整提现时间为8点以后
 3.2-3 增加10分钟限速，修复用户名判定，修复视频助力
 3.3 完善提现判定，修复睡觉，解决资讯赚报错问题
+3.4 取消限速
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 25次以上就行 
 
@@ -291,7 +292,7 @@ async function all() {
         if (!cookie_is_live) {
             continue;
         }
-        await jinbi_record() //收益记录
+        //await jinbi_record() //收益记录
         if (CZ >= 10) {
             await help_index() //助力活动
             await home() //首页信息
@@ -1150,8 +1151,7 @@ function gualist(timeout = 0) {
                         console.log(`刮刮卡列表：剩余${$.gualist.data.ka}张，下一张${idlist.jine}元\n`);
                         $.message += `【刮刮卡列表】：剩余${$.gualist.data.ka}张，下一张${idlist.jine}元\n`;
                         await guadet() //刮卡
-                    }
-                    if ($.gualist.data.ka && $.gualist.data.ka == 0) {
+                    } else {
                         console.log(`刮刮卡列表：剩余${$.gualist.data.ka}张，已完成\n`);
                         $.message += `【刮刮卡列表】：剩余${$.gualist.data.ka}张，已完成\n`;
                     }
@@ -1193,7 +1193,20 @@ function guadet(timeout = 0) {
                         if (guacs) {
                             console.log(`【刮刮卡查询】：开启${$.guadet.jine}元,抽中${guacs}等奖\n`)
                             $.message += `【刮刮卡查询】：开启${$.guadet.jine}元,抽中${guacs}等奖\n`;
-                            if (guacs <= 2) {
+
+                            if (guacs <= 2 && nowTimes.getHours() >= 0 && nowTimes.getHours() <= 17) {
+                                console.log(`【刮刮卡领取】：成功领奖\n`)
+                                $.message += `【刮刮卡领取】：成功领奖\n`;
+                                sign = $.guadet.sign
+                                glid = $.guadet.glid
+                                await guapost() //刮卡奖励
+                            } else if (guacs <= 3 && nowTimes.getHours() >= 18 && nowTimes.getHours() <= 22) {
+                                console.log(`【刮刮卡领取】：成功领奖\n`)
+                                $.message += `【刮刮卡领取】：成功领奖\n`;
+                                sign = $.guadet.sign
+                                glid = $.guadet.glid
+                                await guapost() //刮卡奖励
+                            } else if (guacs <= 4 && nowTimes.getHours() == 23) {
                                 console.log(`【刮刮卡领取】：成功领奖\n`)
                                 $.message += `【刮刮卡领取】：成功领奖\n`;
                                 sign = $.guadet.sign
@@ -1205,7 +1218,6 @@ function guadet(timeout = 0) {
                             }
                         }
                     }
-
                 } catch (e) {
                     $.logErr(e, resp);
                 } finally {
