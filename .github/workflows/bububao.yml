@@ -29,7 +29,7 @@ jobs:
         run: |
           node Task/bububao.js
         env:
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          BBB_CASH: ${{ secrets.BBB_CASH }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
