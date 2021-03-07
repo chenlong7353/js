@@ -1,8 +1,8 @@
 /* ziye 
-github地址 https://github.com/ziye66666
+github地址 https://github.com/6Svip120apk69
 TG频道地址  https://t.me/ziyescript
 TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
-boxjs链接  https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ziye.boxjs.json
+boxjs链接  https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/ziye.boxjs.json
 
 转载请备注个名字，谢谢
 
@@ -49,15 +49,15 @@ hostname=bububao.duoshoutuan.com,
 
 ############## 圈x
 #步步宝获取TOKEN
-https:\/\/bububao\.duoshoutuan\.com\/user\/* url script-request-header https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js
+https:\/\/bububao\.duoshoutuan\.com\/user\/* url script-request-header https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/bububao.js
 
 ############## loon
 #步步宝获取TOKEN
-http-response https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js, requires-body=1,max-size=0, tag=步步宝获取TOKEN
+http-response https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/bububao.js, requires-body=1,max-size=0, tag=步步宝获取TOKEN
 
 ############## surge
 #步步宝获取TOKEN
-步步宝获取TOKEN = type=http-response,pattern=https:\/\/bububao\.duoshoutuan\.com\/user\/*,script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js
+步步宝获取TOKEN = type=http-response,pattern=https:\/\/bububao\.duoshoutuan\.com\/user\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/bububao.js
 */
 
 const $ = Env("步步宝");
@@ -1227,7 +1227,7 @@ function guadet(timeout = 0) {
                                 sign = $.guadet.sign
                                 glid = $.guadet.glid
                                 await guapost() //刮卡奖励
-                            } else if (guacs <= 5  && nowTimes.getHours() == 23) {
+                            } else if (guacs <= 5 && nowTimes.getHours() == 23) {
                                 console.log(`【刮刮卡领取】：成功领奖\n`)
                                 $.message += `【刮刮卡领取】：成功领奖\n`;
                                 sign = $.guadet.sign
@@ -1687,7 +1687,7 @@ function tixian_html(timeout = 0) {
                     if (logs) $.log(`${O}, 提现页🚩: ${data}`);
                     $.tixian_html = JSON.parse(data);
                     if ($.tixian_html.tixian_html) {
-                       
+
                         jine3 = $.tixian_html.tixian_html.find(item => item.jine === '50');
                         jine4 = $.tixian_html.tixian_html.find(item => item.jine === '100');
                         jine5 = $.tixian_html.tixian_html.find(item => item.jine === '200');
@@ -1703,8 +1703,11 @@ function tixian_html(timeout = 0) {
                         $.message += `【${jine3.jine}元】：${jine3.fenshu_tixian_tip}\n【${jine4.jine}元】：${jine4.fenshu_tixian_tip}\n【${jine5.jine}元】：${jine5.fenshu_tixian_tip}\n`;
 
                         if (!day_tixian_tip && ($.user.wx_username != "" || $.user.is_weixin == 1)) {
-                            
-                            if (CASH > 49 && CASH <= 200 && $.user.money >= CASH) {
+
+                            if (CASH == 0.3 && $.user.day_jinbi >= 5000 && $.user.money >= CASH) {
+                                await tixian() //提现
+                            }
+                            if (CASH > 0.3 && CASH <= 200 && $.user.money >= CASH) {
                                 await tixian() //提现
                             }
                             if (CASH == 888) {
@@ -1714,7 +1717,9 @@ function tixian_html(timeout = 0) {
                                     CASH = 100
                                 } else if ($.user.money >= 50 && fenshu5 > 0) {
                                     CASH = 50
-                                } 
+                                }else if ($.user.money >= 0.3 && $.user.day_jinbi >= 5000) {
+                                    CASH = 0.3
+                                }
                                 if (CASH != 888) {
                                     await tixian() //提现
                                 }
